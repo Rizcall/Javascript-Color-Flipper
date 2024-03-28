@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Color Flipper</h1>
+        <button class="btn" onclick="changeColor()">Change Color</button>
+    </div>
+
+    <script>
+        // Array of predefined colors
+        const colors = ["#ff6347", "#ffd700", "#7fff00", "#40e0d0", "#9932cc", "#ff4500", "#87ceeb", "#ff69b4", "#4682b4", "#228b22"];
+
+        function changeColor() {
+            // Generate a random index to select a color from the array
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            const selectedColor = colors[randomIndex];
+            // Change the background color of the body
+            document.body.style.backgroundColor = selectedColor;
+        }
+    </script>
+</body>
+</html>
